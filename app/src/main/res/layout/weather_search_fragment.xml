@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="LabelFor">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="forecastDays"
+            type="Integer" />
+
+        <variable
+            name="units"
+            type="String" />
+
+        <variable
+            name="layoutManager"
+            type="androidx.recyclerview.widget.GridLayoutManager" />
+
+        <variable
+            name="adapter"
+            type="com.whoisyari.myweather.ui.adapter.WeatherItemAdapter" />
+
+        <variable
+            name="viewModel"
+            type="com.whoisyari.myweather.view_model.WeatherSearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/etInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="@string/search_hint"
+            android:gravity="center_vertical"
+            android:inputType="text"
+            android:text="@={ viewModel.cityLiveData }"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnGetWeather"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_padding"
+            android:enabled="@{viewModel.cityLiveData.trim().length() > 3}"
+            android:onClick="@{() -> viewModel.searchWeather(viewModel.cityLiveData, forecastDays, units)}"
+            android:text="@string/search_weather_fragment_get_weather"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etInput" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvWeathers"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:adapterToRv="@{ adapter }"
+            app:layoutManagerToRv="@{ layoutManager }"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnGetWeather" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

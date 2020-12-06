@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">My weather</string>
+    <string name="search_hint">City name</string>
+    <string name="search_weather_fragment_get_weather">Get weather</string>
+
+    <string name="weather_item_date">Date: %1$s</string>
+    <string name="weather_item_average_temp">Average temperature: %.2f</string>
+    <string name="weather_item_pressure">Pressure: %1$d</string>
+    <string name="weather_item_humidity">Humidity: %1$s</string>
+    <string name="weather_item_description">Description: %1$s</string>
+</resources>
