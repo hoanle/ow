@@ -24,7 +24,7 @@ git clone https://github.com/hoanle/ow.git
 - /view_model: ViewModel classes
 - /util: Other facilities and helper
 
-## 3. Development environment:
+## **3. Development environment:**
 - Android Studio 4.1.1
 - Min SDK 23
 - Target SDK 29
@@ -38,7 +38,7 @@ git clone https://github.com/hoanle/ow.git
 
 ##### Keystores:
 - No Keystore is uploaded. Should only configured at local
--
+
 ## **4. Check list:**
 - [x] The application is a simple Android application which is written by Java/Kotlin.
 - [x] The application is able to retrieve the weather information from OpenWeatherMaps API.
@@ -50,4 +50,3 @@ must be from 3 characters or above.
 generating a bunch of API requests. The cache is set at 1 hour
 - [x] The application is able to manage caching mechanism & lifecycle.
 - [x] The application is able to handle failures.
-- 
