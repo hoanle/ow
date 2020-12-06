@@ -2,6 +2,7 @@
 ```bash
 git clone https://github.com/hoanle/ow.git
 ```
+NOTE: The project is built with both newly-released Android Studio (4.1.1) and Kotlin, there could be conflicted issues on defferent local machine
 
 ## **1. Application Architecture:**
 - Application Architecture: **MVVM with LiveData**
